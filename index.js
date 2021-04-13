@@ -22,11 +22,47 @@ class SortedList {
      this.length++
   }
 
-  get(pos) {}
+  get(pos) {
+    if (pos > this.items.length){
+      throw new Error('OutOfBounds');
+    }
 
-  max() {}
+    return this.items[pos]
+  
+  }
 
-  min() {}
+  max() {
+    let highestValue = 0
+    for (let i = 0; i <= this.items.length; i++){
+      if (highestValue < this.items[i]) {
+        highestValue = this.items[i]
+      }  
+    }
+
+    if (this.items == 0){
+      throw new Error('EmptySortedList')
+
+    }
+    return highestValue
+    
+    
+  }
+
+  min() {
+    let minimumValue = this.items[0] 
+    for (let i = 0; i <= this.items.length; i++){
+      if (minimumValue > this.items[i]){
+        minimumValue = this.items[i]
+      }
+    }
+    if (this.items == 0){
+      throw new Error('EmptySortedList')
+
+    }
+
+    return minimumValue
+
+  }
 
   sum() {}
 
